@@ -3,16 +3,22 @@ package com.example.myapplication;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-    Button button1;
-    Button button2;
-    Button button3;
-    Button button4;
+
+    EditText edit1, edit2;
+    Button buttonAdd,buttonSub,buttonMul,buttonDiv;
+    TextView textResult;
+    String num1,num2;
+    Integer result;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,43 +27,62 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.drawable.dino);
 
-        button1 = (Button) findViewById(R.id.button1);
-        button1.setOnClickListener(new View.OnClickListener() {
+        setTitle("초간단 계산기");
+
+        edit1 = (EditText) findViewById(R.id.Edit1);
+        edit2 = (EditText) findViewById(R.id.Edit2);
+
+        textResult = (TextView) findViewById(R.id.TextResult);
+
+
+        buttonAdd = (Button) findViewById(R.id.buttonAdd);
+        buttonAdd.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                Uri webpage = Uri.parse("https://m.naver.com");
-                Intent webIntent = new Intent(Intent.ACTION_VIEW, webpage);
-                startActivity(webIntent);
+            public boolean onTouch(View v, MotionEvent event) {
+                num1 = edit1.getText().toString();
+                num2 = edit2.getText().toString();
+                result = Integer.parseInt(num1) + Integer.parseInt(num2);
+                textResult.setText("계산 결과 : " + result.toString());
+                return false;
             }
         });
 
-        button2 = (Button) findViewById(R.id.button2);
-        button2.setOnClickListener(new View.OnClickListener() {
+        buttonSub = (Button) findViewById(R.id.buttonSub);
+        buttonSub.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                Uri number = Uri.parse("tel:911");
-                Intent callIntent = new Intent(Intent.ACTION_VIEW, number);
-                startActivity(callIntent);
+            public boolean onTouch(View v, MotionEvent event) {
+                num1 = edit1.getText().toString();
+                num2 = edit2.getText().toString();
+                result = Integer.parseInt(num1) - Integer.parseInt(num2);
+                textResult.setText("계산 결과 : " + result.toString());
+                return false;
             }
         });
 
-        button3 = (Button) findViewById(R.id.button3);
-        button3.setOnClickListener(new View.OnClickListener() {
+        buttonMul = (Button) findViewById(R.id.buttonMul);
+        buttonMul.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                Uri gallery = Uri.parse("content://media/internal/images/media");
-                Intent galleryIntent = new Intent(Intent.ACTION_VIEW,gallery);
-                startActivity(galleryIntent);
+            public boolean onTouch(View v, MotionEvent event) {
+                num1 = edit1.getText().toString();
+                num2 = edit2.getText().toString();
+                result = Integer.parseInt(num1) * Integer.parseInt(num2);
+                textResult.setText("계산 결과 : " + result.toString());
+                return false;
             }
         });
 
-        button4 = (Button) findViewById(R.id.button4);
-        button4.setOnClickListener(new View.OnClickListener() {
+        buttonDiv = (Button) findViewById(R.id.buttonDiv);
+        buttonDiv.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                finish();
+            public boolean onTouch(View v, MotionEvent event) {
+                num1 = edit1.getText().toString();
+                num2 = edit2.getText().toString();
+                result = Integer.parseInt(num1) / Integer.parseInt(num2);
+                textResult.setText("계산 결과 : " + result.toString());
+                return false;
             }
         });
+
 
     }
 }

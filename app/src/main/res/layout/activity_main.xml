@@ -1,4 +1,4 @@
-<!--<?xml version="1.0" encoding="utf-8"?>-->
+<?xml version="1.0" encoding="utf-8"?>
 <!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
 <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
 <!--    xmlns:tools="http://schemas.android.com/tools"-->
@@ -7,28 +7,34 @@
 <!--    tools:context=".MainActivity">-->
 
 
-<!--    <TextView-->
-<!--        android:id="@+id/textView"-->
-<!--        android:layout_width="107dp"-->
-<!--        android:layout_height="38dp"-->
+<!--    <Button-->
+<!--        android:id="@+id/button2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
 <!--        android:layout_marginTop="220dp"-->
-<!--        android:text="Hello Android"-->
+<!--        android:layout_marginBottom="52dp"-->
+<!--        android:text="Button"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/imageButton"-->
 <!--        app:layout_constraintEnd_toEndOf="parent"-->
 <!--        app:layout_constraintHorizontal_bias="0.498"-->
 <!--        app:layout_constraintStart_toStartOf="parent"-->
 <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-<!--    <Switch-->
-<!--        android:id="@+id/switch2"-->
-<!--        android:layout_width="65dp"-->
-<!--        android:layout_height="74dp"-->
-<!--        android:layout_marginTop="216dp"-->
-<!--        android:minWidth="48dp"-->
-<!--        android:minHeight="48dp"-->
+<!--    <ImageButton-->
+<!--        android:id="@+id/imageButton"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_marginStart="71dp"-->
+<!--        android:layout_marginLeft="71dp"-->
+<!--        android:layout_marginEnd="71dp"-->
+<!--        android:layout_marginRight="71dp"-->
+<!--        android:layout_marginBottom="139dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
 <!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.498"-->
+<!--        app:layout_constraintHorizontal_bias="1.0"-->
 <!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/textView" />-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/button2"-->
+<!--        app:srcCompat="@drawable/dino" />-->
 <!--</androidx.constraintlayout.widget.ConstraintLayout>-->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -39,35 +45,63 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp">
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/Edit1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/strBtn1"
-        android:background="@color/gray"/>
+        android:layout_margin="10dp"
+        android:hint="숫자1"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/Edit2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="숫자2"
+        android:minHeight="48dp" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonAdd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/strBtn2"
-        android:background="@color/green"
+        android:text="더하기"
+        android:layout_margin="10dp"
         />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/buttonSub"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/strBtn3"
-        android:background="@color/red"
+        android:text="빼기"
+        android:layout_margin="10dp"
         />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/buttonMul"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/strBtn4"
-        android:background="@color/yellow"
+        android:text="곱하기"
+        android:layout_margin="10dp"
+        />
+
+    <Button
+        android:id="@+id/buttonDiv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="나누기"
+        android:layout_margin="10dp"
+        />
+
+    <TextView
+        android:id="@+id/TextResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:textColor="#FF0000"
+        android:layout_margin="10dp"
+        android:text="계산 결과 : "
+
         />
 
 
