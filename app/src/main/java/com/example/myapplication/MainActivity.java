@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     Button buttonAdd,buttonSub,buttonMul,buttonDiv;
     TextView textResult;
     String num1,num2;
-    Integer result;
+    Float result;
 
 
     @Override
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onTouch(View v, MotionEvent event) {
                 num1 = edit1.getText().toString();
                 num2 = edit2.getText().toString();
-                result = Integer.parseInt(num1) + Integer.parseInt(num2);
+                result = Float.parseFloat(num1) + Float.parseFloat(num2);
                 textResult.setText("계산 결과 : " + result.toString());
                 return false;
             }
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onTouch(View v, MotionEvent event) {
                 num1 = edit1.getText().toString();
                 num2 = edit2.getText().toString();
-                result = Integer.parseInt(num1) - Integer.parseInt(num2);
+                result = Float.parseFloat(num1) - Float.parseFloat(num2);
                 textResult.setText("계산 결과 : " + result.toString());
                 return false;
             }
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onTouch(View v, MotionEvent event) {
                 num1 = edit1.getText().toString();
                 num2 = edit2.getText().toString();
-                result = Integer.parseInt(num1) * Integer.parseInt(num2);
+                result = Float.parseFloat(num1) * Float.parseFloat(num2);
                 textResult.setText("계산 결과 : " + result.toString());
                 return false;
             }
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onTouch(View v, MotionEvent event) {
                 num1 = edit1.getText().toString();
                 num2 = edit2.getText().toString();
-                result = Integer.parseInt(num1) / Integer.parseInt(num2);
+                result = Float.parseFloat(num1) / Float.parseFloat(num2);
                 textResult.setText("계산 결과 : " + result.toString());
                 return false;
             }
